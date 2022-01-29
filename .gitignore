@@ -1,0 +1,7 @@
+.env
+gotify/gotify_data
+reverse-proxy/data
+reverse-proxy/letsencrypt
+vaultwarden/vw-data
+
+

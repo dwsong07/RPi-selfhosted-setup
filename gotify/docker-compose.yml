@@ -1,0 +1,17 @@
+version: "3"
+
+networks:
+  frontend:
+    external:
+      name: proxy
+
+services:
+  gotify:
+    image: gotify/server-arm7
+    ports:
+      - 8001:80
+    volumes:
+      - "./gotify_data:/app/data"
+    networks:
+      - frontend
+    restart: always

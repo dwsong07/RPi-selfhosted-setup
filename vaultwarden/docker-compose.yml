@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    ports:
+      - '8002:80'
+    environment:
+      - WEBSOCKET_ENABLED=true  # Enable WebSocket notifications.
+      #- DOMAIN=
+    env_file: .env
+    volumes:
+      - ./vw-data:/data
