@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  db:
+    external: true
+
+services:
+  ttrss:
+    image: wangqiru/ttrss
+    ports:
+      - "8004:80"
+    environment:
+      - SELF_URL_PATH=https://ttrss.dwsong07.tk/
+      - PUID=1000
+      - PGID=1000
+      - DB_HOST=postgres
+      - DB_NAME=ttrss
+      - DB_USER=ttrss
+    env_file: .env
+    networks:
+      - db 
+    restart: always
+

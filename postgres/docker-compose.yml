@@ -1,0 +1,23 @@
+version: "3"
+
+volumes:
+  postgres:
+
+networks:
+  db:
+    external: true
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    hostname: 'postgres'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
+    environment:
+      - "POSTGRES_MULTIPLE_DATABASES=nextcloud,nextcloud: ttrss,ttrss"
+    env_file: .env
+    networks:
+      - db
+

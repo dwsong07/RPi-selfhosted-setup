@@ -2,13 +2,13 @@ version: '3'
 
 volumes:
   nextcloud-data:
-  nextcloud-db:
 
 networks:
   frontend:
     external:
       name: proxy
-  backend:
+  db:
+    external: true
 
 services:
 
@@ -22,7 +22,7 @@ services:
       #- POSTGRES_PASSWORD=change_me_please
       - POSTGRES_DB=nextcloud
       - POSTGRES_USER=nextcloud
-      - POSTGRES_HOST=nextcloud-db
+      - POSTGRES_HOST=postgres
       - PHP_UPLOAD_LIMIT=10G
       - PHP_MEMORY_LIMIT=512M
     env_file: .env
@@ -30,19 +30,19 @@ services:
       - "8000:80"
     networks:
       - frontend
-      - backend
+      - db
 
-  nextcloud-db:
-    image: postgres
-    restart: always
+#  nextcloud-db:
+#    image: postgres
+#    restart: always
       #command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
-    volumes:
-      - nextcloud-db:/var/lib/postgresql
-    environment:
+#    volumes:
+#      - nextcloud-db:/var/lib/postgresql
+#    environment:
       #- POSTGRES_PASSWORD=change_me_please
-      - POSTGRES_DB=nextcloud
-      - POSTGRES_USER=nextcloud
-    env_file: .env
-    networks:
-      - backend
+#      - POSTGRES_DB=nextcloud
+#      - POSTGRES_USER=nextcloud
+#    env_file: .env
+#    networks:
+#      - backend
 
