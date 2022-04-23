@@ -18,6 +18,7 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+      - ./acme.sh:/acme.sh
     networks:
       - proxy
 

@@ -17,7 +17,6 @@ services:
     restart: always
     volumes:
       - nextcloud-data:/var/www/html
-      - /media/pi/USB:/media/pi/USB
     environment:
       #- POSTGRES_PASSWORD=change_me_please
       - POSTGRES_DB=nextcloud

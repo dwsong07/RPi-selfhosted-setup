@@ -2,6 +2,7 @@
 gotify/gotify_data
 reverse-proxy/data
 reverse-proxy/letsencrypt
+reverse-proxy/acme.sh
 vaultwarden/vw-data
-
+wg-easy/data
 

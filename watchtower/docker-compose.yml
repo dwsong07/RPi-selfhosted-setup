@@ -7,6 +7,5 @@ services:
     environment:
       - WATCHTOWER_NOTIFICATIONS=gotify
       - WATCHTOWER_POLL_INTERVAL=21600
-      - WATCHTOWER_MONITOR_ONLY=true
     env_file: .env
     restart: always
