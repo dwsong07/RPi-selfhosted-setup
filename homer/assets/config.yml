@@ -61,10 +61,6 @@ services:
         logo: "assets/tools/vaultwarden-icon.png"
         subtitle: "Password Manager"
         url: "/vaultwarden"
-      - name: "Code Server"
-        logo: "assets/tools/code-server-icon.png"
-        subtitle: "VS Code in the browser"
-        url: "https://192.168.0.36"
   - name: "Server"
     icon: "fas fa-server"
     items:
@@ -76,12 +72,7 @@ services:
         logo: "assets/tools/npm-icon.png"
         subtitle: "Reverse Proxy Manager"
         url: "http://192.168.0.25:81"
-  - name: "Services"
-    icon: "fas fa-wrench"
-    items:
-      - name: "Weather"
-        location: "Seoul" # your location.
-        apikey: "6fb92e92e85de32b63ba9f86d2f28370" # insert your own API key here. Request one from https://openweathermap.org/api.
-        units: "metric" # units to display temperature. Can be one of: metric, imperial, kelvin. Defaults to kelvin.
-        background: "square" # choose which type of background you want behind the image. Can be one of: square, cicle, none. Defaults to none.
-        type: "OpenWeather"
+      - name: "Webmin"
+        logo: "assets/tools/webmin-icon.ico"
+        subtitle: "web-based interface for system administration for Unix"
+        url: "https://192.168.0.25:10000"
